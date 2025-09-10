@@ -1,36 +1,40 @@
-// Contact form validation and feedback
+// Contact form validation
 const contactForm = document.getElementById("contactForm");
 
 contactForm.addEventListener("submit", function (e) {
-  e.preventDefault(); // stop actual form submit
+  e.preventDefault();
 
-  // Collect values
-  const name = contactForm.querySelector("input[type='text']").value.trim();
-  const email = contactForm.querySelector("input[type='email']").value.trim();
-  const subject = contactForm.querySelector("input[type='text']:nth-of-type(2)").value.trim();
-  const message = contactForm.querySelector("textarea").value.trim();
+  // Explicitly select by placeholder text
+  const name = contactForm.querySelector("input[placeholder='Your Name']").value.trim();
+  const email = contactForm.querySelector("input[placeholder='Your Email']").value.trim();
+  const subject = contactForm.querySelector("input[placeholder='Subject']").value.trim();
+  const message = contactForm.querySelector("textarea[placeholder='Your Message']").value.trim();
 
-  // Basic validation
-  if (name.length < 3) {
-    alert("Name must be at least 3 characters long.");
+  // Regex patterns
+  const nameRegex = /^[A-Za-z ]+$/;
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const subjectRegex = /^[A-Za-z0-9 .,!?-]+$/;
+  const messageRegex = /^[A-Za-z0-9 .,!?()'\-]+$/;
+
+  // Validation checks one by one
+  if (!nameRegex.test(name)) {
+    alert("❌ Name can only contain letters and spaces.");
     return;
   }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    alert("Please enter a valid email address.");
+  if (!emailRegex.test(email)) {
+    alert("❌ Please enter a valid email address.");
     return;
   }
-  if (subject.length < 3) {
-    alert("Please enter a subject.");
+  if (!subjectRegex.test(subject)) {
+    alert("❌ Subject cannot contain special characters.");
     return;
   }
-  if (message.length < 10) {
-    alert("Message must be at least 10 characters long.");
+  if (!messageRegex.test(message) || message.length < 10) {
+    alert("❌ Message must be at least 10 characters and should not include special characters.");
     return;
   }
 
-  // Success message
-  alert("Thank you for reaching out! We’ll get back to you soon 🐾");
-
-  // Reset form
+  // Success
+  alert("✅ Thank you for contacting us! We’ll get back to you soon 🐾");
   contactForm.reset();
 });

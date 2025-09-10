@@ -120,6 +120,79 @@
     }
   }
   
+
+.hero {
+  display: flex;
+  height: 100vh;
+  background-color: #f9f9f9;
+}
+
+.hero-left {
+  flex: 1;
+  background: linear-gradient(to right, #f0e5de, #f9f9f9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.image-carousel {
+  width: 80%;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.image-carousel img {
+  width: 100%;
+  border-radius: 10px;
+  animation: slide 10s infinite;
+}
+
+@keyframes slide {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-100%); }
+  50% { transform: translateX(-200%); }
+  75% { transform: translateX(-300%); }
+  100% { transform: translateX(0); }
+}
+
+.hero-right {
+  flex: 1;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.hero-right h1 {
+  font-size: 3rem;
+  color: #333;
+}
+
+.hero-right p {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 1rem 0;
+}
+
+.cta-button {
+  padding: 0.75rem 2rem;
+  font-size: 1.25rem;
+  background-color: #ff7f50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #ff6347;
+}
+
+
+
+
   /* === FOOTER === */
   .footer {
     background: var(--peach);
