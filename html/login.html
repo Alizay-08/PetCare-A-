@@ -15,105 +15,112 @@
 </head>
 <body>
 <!-- NAVBAR -->
+ <!-- ================= NAVBAR ================= -->
 <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
-        <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
-        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-        <div class="dropdown">
-          <button class="dropbtn"><i class="fa-solid fa-bars"></i> Quick Links ▾</button>
-          <div class="dropdown-content">
-            <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
-            <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
-            <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
-          </div>
-        </div>
-      </nav>
-      <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-    </div>
-  </header>
-  
-  <!-- Hero Banner -->
-  <section class="hero">
-    <div class="hero-overlay">
-      <h1>Welcome Back to <span>FurShield</span></h1>
-      <p>Login to manage your pets, appointments & shelters</p>
-      <button class="btn-cta" id="openForm"><i class="fa-solid fa-right-to-bracket"></i> Login</button>
-    </div>
-  </section>
+  <div class="container nav-container">
+    <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
+    
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
 
-  <!-- Hidden Login Form Overlay -->
-  <div class="form-overlay" id="formOverlay">
-    <div class="form-popup">
-      <button class="close-btn" id="closeForm"><i class="fa-solid fa-xmark"></i></button>
-      <h2 class="form-title"><i class="fa-solid fa-right-to-bracket"></i> Login</h2>
-      <form id="loginForm">
+      <a href="product.html">Product</a>
+      
+      
+      <!-- User Dropdown -->
+      <div class="dropdown user-dropdown">
+        <button class="dropbtn">User ▾</button>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
+        </div>
+      </div>
+
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <!-- Quick Links Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Quick Links ▾</button>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
+          <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
+          <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger for mobile -->
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+</header>
+  
+   
+
+  <!-- FORM -->
+   <!-- BACKGROUND IMAGE -->
+  <div class="bg-container"></div>
+
+  <!-- LOGIN FORM -->
+  <div class="form-container">
+    <div class="form-box">
+      <h2><i class="fa-solid fa-right-to-bracket"></i> Login</h2>
+      <form id="loginForm" novalidate>
         <div class="mb-3">
           <label class="form-label">Email</label>
-          <input type="email" class="form-control" required>
+          <input type="email" class="form-control" id="email" required>
+          <div class="error-msg" id="emailError">Enter a valid email</div>
         </div>
         <div class="mb-3">
           <label class="form-label">Password</label>
-          <input type="password" class="form-control" required minlength="6">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Role</label>
-          <select class="form-select" required>
-            <option value="">Select role</option>
-            <option value="owner">Owner</option>
-            <option value="vet">Veterinarian</option>
-            <option value="shelter">Shelter</option>
-          </select>
+          <input type="password" class="form-control" id="password" required>
+          <div class="error-msg" id="passwordError">
+            Password must be 8+ chars, include uppercase, lowercase, number & special char
+          </div>
         </div>
         <button type="submit" class="btn-submit">Login</button>
-        <p class="small mt-2"><a href="#">Forgot Password?</a></p>
       </form>
+      <p class="text-center mt-2">Don't have an account? <a href="register.html">Register</a></p>
     </div>
   </div>
-<!-- FOOTER -->
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-col">
-        <h4>About FurShield</h4>
-        <p>Every Paw/Wing Deserves a Shield of Love.  
-           A unified platform for pet owners, vets, and shelters.</p>
-      </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="#">Dashboards</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">Care Tips</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Articles</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><i class="fa-solid fa-envelope"></i> support@furshield.com</p>
-        <p><i class="fa-solid fa-phone"></i> +123 456 789</p>
-        <div class="socials">
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
-        </div>
+  <div class="container footer-container">
+    <div class="footer-col">
+      <h4>About FurShield</h4>
+      <p>Every Paw/Wing Deserves a Shield of Love.  
+         A unified platform for pet owners, vets, and shelters.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#">Dashboards</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Care Tips</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Articles</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-envelope"></i> support@furshield.com</p>
+      <p><i class="fa-solid fa-phone"></i> +123 456 789</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 FurShield. All Rights Reserved.</p>
-    </div>
-  </footer>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FurShield. All Rights Reserved.</p>
+  </div>
+</footer>
   <!-- Scripts -->
   <script src="../js/login.js"></script>
   <script src="../js/script.js"></script>

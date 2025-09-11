@@ -8,26 +8,26 @@
 
   <!-- Font Awesome Icons -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" rel="stylesheet">
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="../css/style.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/about.css">
     <title>Document</title>
 </head>
 <body>
-    <!-- ================= NAVBAR ================= -->
+     <!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-container">
     <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
     
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
-
       <a href="product.html">Product</a>
       
-      
       <!-- User Dropdown -->
-      <div class="dropdown user-dropdown">
-        <button class="dropbtn">User ▾</button>
+      <div class="dropdown">
+        <a href="#" class="dropbtn">User ▾</a>
         <div class="dropdown-content">
           <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
@@ -51,61 +51,46 @@
     <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
   </div>
 </header>
-  
-<!-- ✅ Contact Hero Section -->
-<section class="hero">
-  <div class="hero-overlay">
-    <h1>Contact Us 🐾</h1>
-    <p>We’d love to hear from you — let’s connect today.</p>
-    <button class="btn-cta" onclick="location.href='#contact-form'">Get Started</button>
+
+<!-- 🌟 About Hero Section -->
+<section class="about-hero">
+  <div class="about-overlay">
+    <h1>About FurShield 🐾</h1>
+    <p>Every paw deserves love, care, and protection.</p>
   </div>
 </section>
 
 
-  <!-- ✅ Main Contact Section -->
-  <section id="contact-form" class="contact container py-5">
-    <div class="row g-4">
-      <!-- Left Info + Map -->
-      <div class="col-md-5">
-        <div class="info-card p-4 mb-4">
-          <h3><i class="fa-solid fa-paw"></i> Get in Touch</h3>
-          <p><span class="icon-circle"><i class="fa-solid fa-location-dot"></i></span> 123 FurShield Lane, Pet City</p>
-          <p><span class="icon-circle"><i class="fa-solid fa-phone"></i></span> +92 300 1234567</p>
-          <p><span class="icon-circle"><i class="fa-solid fa-envelope"></i></span> support@furshield.com</p>
+<!-- ================= Our Story Section ================= -->
+<section id="our-story" class="our-story">
+  <div class="story-grid">
 
-          <!-- Social -->
-          <div class="social-icons mt-3">
-            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="#"><i class="fa-brands fa-instagram"></i></a>
-            <a href="#"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
-          </div>
-        </div>
-
-        <!-- Map -->
-        <div class="map-card">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18..." 
-            width="100%" height="220" style="border:0;" allowfullscreen loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- Right Form -->
-      <div class="col-md-7">
-        <div class="form-card p-4 h-100">
-          <h3><i class="fa-solid fa-message"></i> Send us a Message</h3>
-          <form id="contactForm">
-            <input type="name" class="form-control mb-3" placeholder="Your Name" required minlength="3">
-            <input type="email" class="form-control mb-3" placeholder="Your Email" required>
-            <input type="subject" class="form-control mb-3" placeholder="Subject" required>
-            <textarea class="form-control mb-3" rows="5" placeholder="Your Message" required minlength="10"></textarea>
-            <button type="submit" class="btn-submit"><i class="fa-solid fa-paper-plane"></i> Send</button>
-          </form>
-        </div>
-      </div>
+    <!-- Left: Image -->
+    <div class="story-image">
+      <img src="../images/story.jpg" alt="Caring for a puppy">
     </div>
-  </section>
 
-  <!-- ================= FOOTER ================= -->
+    <!-- Right: Text -->
+    <div class="story-text">
+      <h2>Our Story</h2>
+      <p class="typing-text delay1">
+        It started with a single rescued puppy and a small promise: to make pet care kinder, easier, and more connected.
+      
+      <p class="typing-text delay2">
+        Today FurShield brings pet owners, veterinarians, and shelters together on one friendly platform.
+     
+      <p class="typing-text delay3">
+        We're building a community where every paw finds help and every owner finds support.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+
+
+
+<!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-container">
     <div class="footer-col">
@@ -146,7 +131,7 @@
   </div>
 </footer>
     <script src="../js/script.js"></script>
-    <script src="../js/contact.js"></script>
+    <script src="../js/about.js"></script>
 
 </body>
 </html>

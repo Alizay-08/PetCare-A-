@@ -15,92 +15,410 @@
     <title>Document</title>
 </head>
 <body>
-   <!-- NAVBAR -->
+ <!-- ================= NAVBAR ================= -->
 <header class="navbar">
-    <div class="container nav-container">
-      <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
-      <nav class="nav-links" id="nav-links">
-        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-        <a href="register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
-        <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
-        <a href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
-        <a href="contact.html"><i class="fa-solid fa-envelope"></i> Contact</a>
-        <div class="dropdown">
-          <button class="dropbtn"><i class="fa-solid fa-bars"></i> Quick Links ▾</button>
-          <div class="dropdown-content">
-            <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
-            <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
-            <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
-          </div>
+  <div class="container nav-container">
+    <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
+    
+    <nav class="nav-links" id="nav-links">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      
+      <!-- User Dropdown -->
+      <div class="dropdown">
+        <a href="#" class="dropbtn">User ▾</a>
+        <div class="dropdown-content">
+          <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
-      </nav>
-      <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
-    </div>
-  </header>
+      </div>
+
+      <a href="about.html">About</a>
+      <a href="contact.html">Contact</a>
+
+      <!-- Quick Links Dropdown -->
+      <div class="dropdown">
+        <button class="dropbtn">Quick Links ▾</button>
+        <div class="dropdown-content">
+          <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
+          <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
+          <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hamburger for mobile -->
+    <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+  </div>
+</header>
+
 
 <!-- Hero Section -->
 <section class="hero">
-  <!-- Left Side (Text) -->
-  <div class="hero-left">
-    <h1>Welcome to FurShield 🐾</h1>
-    <p class="subline">Because every paw deserves love and care.</p>
-    <p class="support-text">
-      Connect with loving pet owners, find trusted veterinarians, and discover the perfect products for your furry friends.
-    </p>
-    <button class="cta-button">Get Started</button>
-    <p class="micro-copy">Join our community of pet lovers today!</p>
+  <div class="hero-overlay">
+    <div class="hero-left">
+      <h1>Welcome to FurShield 🐾</h1>
+      <p class="subline">Because every paw deserves love and care.</p>
+      <p class="support-text">
+        Connect with loving pet owners, find trusted veterinarians, and discover the perfect products for your furry friends.
+      </p>
+     <button class="cta-button" onclick="location.href='#quicklinks'">
+  Get Started
+</button>
+
+
+
+      <p class="micro-copy">Join our community of pet lovers today!</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== Quick Links Section ========== -->
+ <!-- ================= Quick Links Navigation ================= -->
+<section id="quicklinks" class="quick-nav">
+  <div class="quick-nav-container">
+    <!-- Search Bar -->
+    <div class="search-box">
+      <input type="text" placeholder="Search pets, products, vets..." id="searchInput">
+      <button><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <!-- Filters -->
+    <div class="filters">
+      <select id="categoryFilter">
+        <option value="">All Categories</option>
+        <option value="owners">For Owners</option>
+        <option value="vets">For Vets</option>
+        <option value="shelters">For Shelters</option>
+        <option value="products">Products</option>
+        <option value="health">Health</option>
+        <option value="stories">Stories</option>
+      </select>
+
+      <select id="sortBy">
+        <option value="">Sort By</option>
+        <option value="name">Name</option>
+        <option value="recent">Most Recent</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<section class="quick-links">
+  <div class="card animate-card">
+    <img src="../images/adopt1.jpg" alt="Adopt Pets" class="card-img">
+    <div class="card-overlay">
+      <h3>Adopt Pets</h3>
+    </div>
   </div>
 
-  <!-- Right Side (Images) -->
-  <div class="hero-right">
-    <img src="puppy1.png" class="pet-img img1" alt="Happy Puppy">
-    <img src="puppy2.png" class="pet-img img2" alt="Playful Puppy">
-    <img src="puppy3.png" class="pet-img img3" alt="Cute Puppy">
+  <div class="card animate-card">
+    <img src="../images/vet1.jpg" alt="Find Vets" class="card-img">
+    <div class="card-overlay">
+      <h3>Find Vets</h3>
+    </div>
+  </div>
+
+  <div class="card animate-card">
+    <img src="../images/products1.jpg" alt="Browse Products" class="card-img">
+    <div class="card-overlay">
+      <h3>Browse Products</h3>
+    </div>
   </div>
 </section>
 
 
+<!-- ================= Purpose Section ================= -->
+<section class="purpose-section">
+  <div class="purpose-container">
+    <!-- Heading -->
+    <div class="purpose-header">
+      <h2>Why FurShield?</h2>
+      <p>Connecting pet lovers, vets, shelters, and pet enthusiasts in one loving platform.</p>
+    </div>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container footer-container">
-      <div class="footer-col">
-        <h4>About FurShield</h4>
-        <p>Every Paw/Wing Deserves a Shield of Love.  
-           A unified platform for pet owners, vets, and shelters.</p>
+    <!-- Cards Container -->
+    <div class="purpose-cards">
+      <!-- Card 1 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/pet1.jpg" alt="For Owners" class="card-img">
+        <div class="card-overlay">
+          <h3>For Owners</h3>
+          <p>
+            Easily adopt pets from trusted shelters, track their health and vaccinations,
+            connect with certified veterinarians, and manage your pet's daily care.
+          </p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Quick Links</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="register.html">Register</a></li>
-          <li><a href="login.html">Login</a></li>
-          <li><a href="#">Dashboards</a></li>
-        </ul>
+
+      <!-- Card 2 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/pet2.jpg" alt="For Vets" class="card-img">
+        <div class="card-overlay">
+          <h3>For Vets</h3>
+          <p>
+            Manage appointments, provide high-quality care, access pet medical histories,
+            and grow your practice efficiently.
+          </p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Resources</h4>
-        <ul>
-          <li><a href="#">Care Tips</a></li>
-          <li><a href="#">FAQs</a></li>
-          <li><a href="#">Articles</a></li>
-        </ul>
+
+      <!-- Card 3 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/pet3.jpg" alt="For Shelters" class="card-img">
+        <div class="card-overlay">
+          <h3>For Shelters</h3>
+          <p>
+            Showcase pets for adoption, streamline the adoption process, maintain records,
+            and connect with loving homes easily.
+          </p>
+        </div>
       </div>
-      <div class="footer-col">
-        <h4>Contact</h4>
-        <p><i class="fa-solid fa-envelope"></i> support@furshield.com</p>
-        <p><i class="fa-solid fa-phone"></i> +123 456 789</p>
-        <div class="socials">
-          <a href="#"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#"><i class="fa-brands fa-facebook"></i></a>
-          <a href="#"><i class="fa-brands fa-instagram"></i></a>
+
+      <!-- Card 4 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/product.jpg" alt="Pet Products" class="card-img">
+        <div class="card-overlay">
+          <h3>Pet Products</h3>
+          <p>
+            Browse and purchase high-quality pet products including food, toys, grooming essentials,
+            and accessories. Get recommendations based on your pet's needs.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/health.jpg" alt="Health Tracking" class="card-img">
+        <div class="card-overlay">
+          <h3>Health Tracking</h3>
+          <p>
+            Monitor your pet's vaccination schedules, upcoming appointments, and general wellness.
+            Receive timely alerts to ensure your pet stays healthy.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/stories.jpg" alt="Adoption Stories" class="card-img">
+        <div class="card-overlay">
+          <h3>Adoption Stories</h3>
+          <p>
+            Read inspiring stories from pet owners and shelters about successful adoptions.
+            Share experiences and celebrate the joy of pet companionship.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 7 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/training .jpg" alt="Training & Tips" class="card-img">
+        <div class="card-overlay">
+          <h3>Training & Tips</h3>
+          <p>
+            Access expert guides and tutorials to train your pets, teach good habits,
+            and enhance bonding with your furry friends.
+          </p>
+        </div>
+      </div>
+
+      <!-- Card 8 -->
+      <div class="purpose-card animate-card">
+        <img src="../images/community .jpg" alt="Community & Events" class="card-img">
+        <div class="card-overlay">
+          <h3>Community & Events</h3>
+          <p>
+            Join a vibrant community of pet lovers. Participate in events, share experiences,
+            and celebrate pet-friendly activities.
+          </p>
         </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 FurShield. All Rights Reserved.</p>
+  </div>
+</section>
+
+
+<!-- ================= Common Features Section ================= -->
+<section class="common-features">
+  <div class="container features-container">
+    <!-- Heading -->
+    <div class="features-header">
+      <h2>Common Features</h2>
+      <p>All users enjoy these essential features for a seamless experience.</p>
     </div>
-  </footer>
+
+    <!-- Features Cards -->
+    <div class="features-cards">
+      <!-- Card 1 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-user-lock"></i>
+        <h3>Role-Based Access</h3>
+        <p>Users can access only those features relevant to their role.</p>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <h3>Search, Sort & Filter</h3>
+        <p>Search pets, products, articles, or vets using filters like location, breed, or category.</p>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-mobile-screen-button"></i>
+        <h3>Responsive Design</h3>
+        <p>Access the application seamlessly across devices – desktop, tablet, or mobile.</p>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-bell"></i>
+        <h3>Notifications</h3>
+        <p>Receive alerts for vaccination, appointments, product arrivals, and more.</p>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-star"></i>
+        <h3>Feedback & Ratings</h3>
+        <p>Rate vets, shelters, or products and leave comments to share your experience.</p>
+      </div>
+
+      <!-- Card 6 -->
+      <div class="feature-card animate-card">
+        <i class="fa-solid fa-info-circle"></i>
+        <h3>About & Contact</h3>
+        <p>View team info, contact details, and location via Google Maps integration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Product Grid Section ================= -->
+<section class="product-grid">
+  <div class="container">
+    <!-- Section Heading -->
+    <div class="grid-header">
+      <h2>Shop by Category</h2>
+      <p>Explore our top categories</p>
+    </div>
+
+    <!-- Product Grid -->
+    <div class="grid-container">
+      <!-- Card 1 -->
+      <div class="product-card">
+        <img src="../images/toys.jpg" alt="Toys">
+        <h3>Toys</h3>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="product-card">
+        <img src="../images/food .jpg" alt="Food">
+        <h3>Food</h3>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="product-card">
+        <img src="../images/accessories .jpg" alt="Accessories">
+        <h3>Accessories</h3>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="product-card">
+        <img src="../images/health.jpg" alt="Health">
+        <h3>Health</h3>
+      </div>
+
+      <!-- Card 5 -->
+      <div class="product-card">
+        <img src="../images/grooming.jpg" alt="Grooming">
+        <h3>Grooming</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ================= Feedback & Ratings Section ================= -->
+<section class="feedback" id="feedback">
+  <h2 class="section-title">What Our Users Say 🐾</h2>
+  <p class="section-subtitle">Trusted by pet owners, vets, and shelters</p>
+
+  <div class="feedback-container">
+    <!-- Card 1 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client1 (1).jpg" alt="User 1" class="user-img">
+      <h3>Sarah Johnson</h3>
+      <p class="user-role">Pet Owner</p>
+      <p class="review">"FurShield helped me find the best vet for my puppy.
+        The process was smooth and stress-free!"</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client2.jpg" alt="User 2" class="user-img">
+      <h3>Dr. Ahmed</h3>
+      <p class="user-role">Veterinarian</p>
+      <p class="review">"Great platform to connect with pet owners.
+        The rating system builds real trust!"</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client3.jpg" alt="User 3" class="user-img">
+      <h3>Emily Brown</h3>
+      <p class="user-role">Shelter Volunteer</p>
+      <p class="review">"Loved how easy it was to list our shelter pets.
+        Adoption requests doubled in weeks!"</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
+
+  
+ 
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="container footer-container">
+    <div class="footer-col">
+      <h4>About FurShield</h4>
+      <p>Every Paw/Wing Deserves a Shield of Love.  
+         A unified platform for pet owners, vets, and shelters.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="#">Dashboards</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="#">Care Tips</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Articles</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p><i class="fa-solid fa-envelope"></i> support@furshield.com</p>
+      <p><i class="fa-solid fa-phone"></i> +123 456 789</p>
+      <div class="socials">
+        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2025 FurShield. All Rights Reserved.</p>
+  </div>
+</footer>
     <script src="../js/script.js"></script>
 
 </body>

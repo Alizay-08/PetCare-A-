@@ -1,13 +1,31 @@
-const openBtn = document.getElementById("openForm");
-const closeBtn = document.getElementById("closeForm");
-const formOverlay = document.getElementById("formOverlay");
+const loginForm = document.getElementById('loginForm');
+const emailInput = document.getElementById('email');
+const passwordInput = document.getElementById('password');
 
-openBtn.addEventListener("click", () => {
-  formOverlay.style.display = "flex";
+const emailError = document.getElementById('emailError');
+const passwordError = document.getElementById('passwordError');
+
+emailInput.addEventListener('input', () => {
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+  emailError.style.display = valid ? 'none' : 'block';
 });
-closeBtn.addEventListener("click", () => {
-  formOverlay.style.display = "none";
+
+passwordInput.addEventListener('input', () => {
+  const val = passwordInput.value;
+  const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(val);
+  passwordError.style.display = valid ? 'none' : 'block';
 });
-formOverlay.addEventListener("click", (e) => {
-  if (e.target === formOverlay) formOverlay.style.display = "none";
+
+loginForm.addEventListener('submit', e => {
+  e.preventDefault();
+  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
+  const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(passwordInput.value);
+
+  emailError.style.display = emailValid ? 'none' : 'block';
+  passwordError.style.display = passwordValid ? 'none' : 'block';
+
+  if(emailValid && passwordValid){
+    alert("Login successful!"); // replace with backend
+    loginForm.reset();
+  }
 });
