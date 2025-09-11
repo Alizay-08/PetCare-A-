@@ -16,7 +16,7 @@
     <title>Document</title>
 </head>
 <body>
-     <!-- ================= NAVBAR ================= -->
+   <!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-container">
     <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
@@ -27,8 +27,8 @@
       
       <!-- User Dropdown -->
       <div class="dropdown">
-        <a href="#" class="dropbtn">User ▾</a>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="userDrop">User ▾</a>
+        <div class="dropdown-content" id="userMenu">
           <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
       </div>
@@ -38,8 +38,8 @@
 
       <!-- Quick Links Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn">Quick Links ▾</button>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="quickDrop">Quick Links ▾</a>
+        <div class="dropdown-content" id="quickMenu">
           <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
           <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
           <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
@@ -51,6 +51,7 @@
     <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
   </div>
 </header>
+
 
 <!-- 🌟 About Hero Section -->
 <section class="about-hero">
@@ -66,21 +67,21 @@
   <div class="story-grid">
 
     <!-- Left: Image -->
-    <div class="story-image">
+    <div class="story-image animate-left">
       <img src="../images/story.jpg" alt="Caring for a puppy">
     </div>
 
     <!-- Right: Text -->
-    <div class="story-text">
+    <div class="story-text animate-right">
       <h2>Our Story</h2>
-      <p class="typing-text delay1">
-        It started with a single rescued puppy and a small promise: to make pet care kinder, easier, and more connected.
-      
-      <p class="typing-text delay2">
-        Today FurShield brings pet owners, veterinarians, and shelters together on one friendly platform.
-     
-      <p class="typing-text delay3">
-        We're building a community where every paw finds help and every owner finds support.
+      <p>
+        It all began with a tiny, abandoned puppy found on the streets. Inspired by its courage and innocence, we made a promise: to create a platform where every paw could receive the care, love, and support it deserved.
+      </p>
+      <p>
+        Today, FurShield brings pet owners, veterinarians, and shelters together on one friendly platform.
+      </p>
+      <p>
+        We're building a community where every paw finds help, every owner finds guidance, and everyone feels part of something bigger. Join us in this journey of compassion, care, and connection.
       </p>
     </div>
 
@@ -88,6 +89,167 @@
 </section>
 
 
+<!-- ================= Mission & Vision Section ================= -->
+<section id="mission-vision" class="mission-vision">
+  <div class="container">
+    <h2 class="section-title">Our Mission & Vision</h2>
+    <p class="section-subtitle">
+      At FurShield, we aim to make pet care easier, safer, and more connected for everyone.
+    </p>
+
+    <div class="mission-grid">
+      <div class="mission-card animate-card delay1">
+        <div class="icon">
+          <i class="fa-solid fa-heart"></i>
+        </div>
+        <h3>Compassion</h3>
+        <p>We believe every pet deserves love, care, and protection from harm.</p>
+      </div>
+
+      <div class="mission-card animate-card delay2">
+        <div class="icon">
+          <i class="fa-solid fa-shield-cat"></i>
+        </div>
+        <h3>Safety</h3>
+        <p>We provide trusted resources for owners, vets, and shelters alike.</p>
+      </div>
+
+      <div class="mission-card animate-card delay3">
+        <div class="icon">
+          <i class="fa-solid fa-users"></i>
+        </div>
+        <h3>Community</h3>
+        <p>Building a network where pet owners, vets, and shelters support each other.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Meet the Team Section ================= -->
+<section id="meet-the-team" class="meet-the-team">
+  <div class="container">
+    <h2 class="section-title">Meet Our Team</h2>
+    <p class="section-subtitle">Dedicated professionals making FurShield possible</p>
+
+    <div class="team-grid">
+      <!-- Team Member 1 (Female) -->
+      <div class="team-card animate-card delay1">
+        <div class="team-image">
+          <img src="../images/team2.jpeg" alt="Jane Doe">
+        </div>
+        <div class="team-info">
+          <h3>Alizay Khan</h3>
+          <p>Lead Veterinarian, ensuring pet care is always top-notch.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 2 (Male) -->
+      <div class="team-card animate-card delay2">
+        <div class="team-image">
+          <img src="../images/team1.png" alt="John Smith">
+        </div>
+        <div class="team-info">
+          <h3>Abdul Moiz</h3>
+          <p>Product Manager, curating the best pet products for our users.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 3 (Male) -->
+      <div class="team-card animate-card delay3">
+        <div class="team-image">
+          <img src="../images/team3.png" alt="Michael Lee">
+        </div>
+        <div class="team-info">
+          <h3>Omar Farooq</h3>
+          <p>Community Manager, connecting owners, vets, and shelters.</p>
+        </div>
+      </div>
+
+      <!-- Team Member 4 (Male) -->
+      <div class="team-card animate-card delay4">
+        <div class="team-image">
+          <img src="../images/team4.png" alt="David Brown">
+        </div>
+        <div class="team-info">
+          <h3>Minhaj Rehman</h3>
+          <p>Software Engineer, building seamless FurShield experiences.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Our Values Section ================= -->
+<section id="our-values" class="our-values">
+  <div class="container">
+    <h2 class="section-title">Our Values</h2>
+    <p class="section-subtitle">What drives FurShield and keeps us dedicated to pets and their families.</p>
+
+    <div class="values-grid">
+      <div class="value-card animate-card delay1">
+        <div class="icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+        <h3>Compassion</h3>
+        <p>Every pet deserves kindness and care, no matter their story.</p>
+      </div>
+
+      <div class="value-card animate-card delay2">
+        <div class="icon"><i class="fa-solid fa-paw"></i></div>
+        <h3>Dedication</h3>
+        <p>We stay committed to improving pet care every single day.</p>
+      </div>
+
+      <div class="value-card animate-card delay3">
+        <div class="icon"><i class="fa-solid fa-lightbulb"></i></div>
+        <h3>Innovation</h3>
+        <p>Using modern tools and ideas to make pet care simpler and smarter.</p>
+      </div>
+
+      <div class="value-card animate-card delay4">
+        <div class="icon"><i class="fa-solid fa-people-group"></i></div>
+        <h3>Community</h3>
+        <p>Creating a trusted network where pet owners and experts connect.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= Feedback & Ratings Section ================= -->
+<section class="feedback" id="feedback">
+  <h2 class="section-title">What Our Users Say 🐾</h2>
+  <p class="section-subtitle">Trusted by pet owners, vets, and shelters</p>
+
+  <div class="feedback-container">
+    <!-- Card 1 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client1 (1).jpg" alt="User 1" class="user-img">
+      <h3>Sarah Johnson</h3>
+      <p class="user-role">Pet Owner</p>
+      <p class="review">"FurShield helped me find the best vet for my puppy.
+        The process was smooth and stress-free!"</p>
+      <div class="stars">★★★★★</div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client2.jpg" alt="User 2" class="user-img">
+      <h3>Dr. Ahmed</h3>
+      <p class="user-role">Veterinarian</p>
+      <p class="review">"Great platform to connect with pet owners.
+        The rating system builds real trust!"</p>
+      <div class="stars">★★★★☆</div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="feedback-card animate-card">
+      <img src="../images/client3.jpg" alt="User 3" class="user-img">
+      <h3>Emily Brown</h3>
+      <p class="user-role">Shelter Volunteer</p>
+      <p class="review">"Loved how easy it was to list our shelter pets.
+        Adoption requests doubled in weeks!"</p>
+      <div class="stars">★★★★★</div>
+    </div>
+  </div>
+</section>
 
 
 <!-- ================= FOOTER ================= -->

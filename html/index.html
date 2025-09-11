@@ -15,7 +15,7 @@
     <title>Document</title>
 </head>
 <body>
- <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-container">
     <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
@@ -26,8 +26,8 @@
       
       <!-- User Dropdown -->
       <div class="dropdown">
-        <a href="#" class="dropbtn">User ▾</a>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="userDrop">User ▾</a>
+        <div class="dropdown-content" id="userMenu">
           <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
       </div>
@@ -37,8 +37,8 @@
 
       <!-- Quick Links Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn">Quick Links ▾</button>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="quickDrop">Quick Links ▾</a>
+        <div class="dropdown-content" id="quickMenu">
           <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
           <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
           <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
@@ -50,8 +50,6 @@
     <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
   </div>
 </header>
-
-
 <!-- Hero Section -->
 <section class="hero">
   <div class="hero-overlay">
@@ -339,46 +337,62 @@
 </section>
 
 
-<!-- ================= Feedback & Ratings Section ================= -->
-<section class="feedback" id="feedback">
-  <h2 class="section-title">What Our Users Say 🐾</h2>
-  <p class="section-subtitle">Trusted by pet owners, vets, and shelters</p>
+<!-- ================= Appointment Form Section ================= -->
+<section id="appointment" class="appointment-section">
+  <div class="overlay"></div>
+  <div class="form-container">
+    <h2 class="form-title">Book an Appointment</h2>
+    <p class="form-subtitle">Schedule a visit for your beloved pet with just a few clicks.</p>
 
-  <div class="feedback-container">
-    <!-- Card 1 -->
-    <div class="feedback-card animate-card">
-      <img src="../images/client1 (1).jpg" alt="User 1" class="user-img">
-      <h3>Sarah Johnson</h3>
-      <p class="user-role">Pet Owner</p>
-      <p class="review">"FurShield helped me find the best vet for my puppy.
-        The process was smooth and stress-free!"</p>
-      <div class="stars">★★★★★</div>
-    </div>
+    <form id="appointmentForm" novalidate>
+      <div class="form-group">
+        <label class="form-label">Full Name</label>
+        <input type="text" id="name" name="name" class="form-control" required>
+        <div class="error-msg" id="nameError">Full Name must be at least 3 characters (letters & spaces only).</div>
+      </div>
 
-    <!-- Card 2 -->
-    <div class="feedback-card animate-card">
-      <img src="../images/client2.jpg" alt="User 2" class="user-img">
-      <h3>Dr. Ahmed</h3>
-      <p class="user-role">Veterinarian</p>
-      <p class="review">"Great platform to connect with pet owners.
-        The rating system builds real trust!"</p>
-      <div class="stars">★★★★☆</div>
-    </div>
+      <div class="form-group">
+        <label class="form-label">Email</label>
+        <input type="email" id="email" name="email" class="form-control" required>
+        <div class="error-msg" id="emailError">Enter a valid email address.</div>
+      </div>
 
-    <!-- Card 3 -->
-    <div class="feedback-card animate-card">
-      <img src="../images/client3.jpg" alt="User 3" class="user-img">
-      <h3>Emily Brown</h3>
-      <p class="user-role">Shelter Volunteer</p>
-      <p class="review">"Loved how easy it was to list our shelter pets.
-        Adoption requests doubled in weeks!"</p>
-      <div class="stars">★★★★★</div>
-    </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="form-control" required>
+        <div class="error-msg" id="phoneError">Phone number must be 10-15 digits only.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Pet Type</label>
+        <select id="petType" name="petType" class="form-control" required>
+          <option value="">Select Pet Type</option>
+          <option value="Dog">Dog</option>
+          <option value="Cat">Cat</option>
+          <option value="Bird">Bird</option>
+          <option value="Other">Other</option>
+        </select>
+        <div class="error-msg" id="petTypeError">Please select a Pet Type.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Date</label>
+        <input type="date" id="date" name="date" class="form-control" required>
+        <div class="error-msg" id="dateError">Please select today or a future date.</div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Message / Concern</label>
+        <textarea id="message" name="message" rows="4" class="form-control" placeholder="Optional, max 500 chars"></textarea>
+        <div class="error-msg" id="messageError">Message cannot exceed 500 characters.</div>
+      </div>
+
+      <button type="submit" class="btn-submit">Book Appointment</button>
+    </form>
   </div>
 </section>
 
-  
- 
+
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-container">

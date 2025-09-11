@@ -10,9 +10,6 @@
   --footer-text: #F5F5F5;
 }
 
-/* ==============================
-   Global Styles
-============================== */
 * {
   margin: 0;
   padding: 0;
@@ -45,7 +42,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
 
 /* Navbar base */
 .navbar {
-  background: #fff;
+  background: var(--white);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   padding: 15px 20px;
   position: relative;
@@ -61,7 +58,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
 .logo {
   font-size: 1.5rem;
   font-weight: bold;
-  color: #333;
+  color: var(--coral);
 }
 
 .nav-links {
@@ -70,66 +67,54 @@ body{ font-family: 'Segoe UI', sans-serif; }
   gap: 20px;
 }
 
-.nav-links a {
+.nav-links a, .dropbtn {
   text-decoration: none;
-  color: #333;
+  color: var(--coral);
   font-weight: 500;
-  transition: color 0.3s;
+  transition: color 0.3s ease;
+  position: relative;
 }
 
-.nav-links a:hover {
-  color: #ff6b6b;
+/* Hover underline animation */
+.nav-links a:hover, .dropbtn:hover {
+  color: var(--coral);
+}
+
+.nav-links a::after, .dropbtn::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background: var(--coral);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after, .dropbtn:hover::after {
+  width: 100%;
 }
 
 /* Dropdown Container */
 .dropdown {
   position: relative;
-  display: inline-block;
 }
-
-/* Dropdown button */
-.dropbtn {
-  color: var(--gray);
-  padding: 0.7rem 1rem;
-  text-decoration: none;
-  display: inline-block;
-  transition: color 0.3s ease;
-}
-
-/* On hover underline animation */
-.dropbtn:hover {
-  color: var(--coral);
-  position: relative;
-}
-.dropbtn::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 2px;
+.dropdown-content.show {
   display: block;
-  margin-top: 5px;
-  right: 0;
-  background: var(--coral);
-  transition: width 0.3s ease;
 }
-.dropbtn:hover::after {
-  width: 100%;
-  left: 0;
-}
-
 /* Dropdown content */
 .dropdown-content {
   display: none;
   position: absolute;
   background-color: var(--white);
-  min-width: 160px;
+  min-width: 180px;
   box-shadow: 0 8px 16px rgba(0,0,0,0.2);
   border-radius: 6px;
   z-index: 10;
 }
 
 .dropdown-content a {
-  color: var(--gray);
+  color: var(--coral);
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -138,35 +123,25 @@ body{ font-family: 'Segoe UI', sans-serif; }
 
 .dropdown-content a:hover {
   background-color: var(--peach);
-  color: var(--gray);
 }
 
-/* Show dropdown on hover */
-.dropdown:hover .dropdown-content {
-  display: block;
-}
-
-
-
-/* Toggle button */
+/* Hamburger */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #333;
+  color: var(--coral);
 }
 
 /* Responsive */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block;
-  }
+  .menu-toggle { display: block; }
 
   .nav-links {
     display: none;
     flex-direction: column;
-    gap: 15px;
-    background: #fff;
+    gap: 10px;
+    background: var(--white);
     position: absolute;
     top: 70px;
     right: 20px;
@@ -176,9 +151,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
   }
 
-  .nav-links.active {
-    display: flex;
-  }
+  .nav-links.active { display: flex; }
 
   .dropdown-content {
     position: static;
@@ -187,9 +160,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
     padding: 0;
   }
 
-  .dropdown-content a {
-    padding: 10px;
-  }
+  .dropdown-content a { padding: 10px; }
 }
 
 /* ================= ABOUT HERO ================= */
@@ -242,11 +213,11 @@ body{ font-family: 'Segoe UI', sans-serif; }
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ========our-story======== */
 
+/* ================= Our Story Section ================= */
 .our-story {
   padding: 4rem 1.5rem;
-  background: var(--white);
+  background: var(--coral);
 }
 
 .story-grid {
@@ -258,57 +229,45 @@ body{ font-family: 'Segoe UI', sans-serif; }
   margin: 0 auto;
 }
 
-/* IMAGE */
 .story-image img {
   width: 100%;
-  max-width: 420px;  /* image text ke proportion me */
+  max-width: 420px;
   height: auto;
   border-radius: 14px;
   object-fit: cover;
   box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  opacity: 0;
+  animation: slideInLeft 1s forwards;
 }
 
-/* TEXT */
 .story-text h2 {
   font-family: 'Playfair Display', serif;
   font-size: 2.2rem;
-  color: var(--coral);
-  margin-bottom: 1rem;
+  color: var(--primary-dark);
+  margin-bottom: 1.5rem;
+  opacity: 0;
+  animation: slideInRight 1s forwards 0.5s;
 }
 
-/* Typing effect */
-.typing-text {
+.story-text p {
   font-family: 'Quicksand', sans-serif;
-  font-size: 1.05rem;
-  line-height: 1.7;
+  font-size: 1.15rem;
+  line-height: 1.8;
   color: #444;
   margin-bottom: 1rem;
-  overflow: hidden;
-  border-right: 2px solid var(--coral);
-  white-space: nowrap;
-  width: 0;
+  opacity: 0;
+  animation: slideInRight 1s forwards 0.7s;
 }
 
-/* Keyframes */
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
-}
-@keyframes blink {
-  50% { border-color: transparent; }
+/* ================= ANIMATIONS ================= */
+@keyframes slideInLeft {
+  0% { opacity: 0; transform: translateX(-50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
-/* Animation timings */
-.delay1 {
-  animation: typing 3s steps(60, end) forwards, blink 0.8s step-end infinite;
-}
-.delay2 {
-  animation: typing 3s steps(60, end) forwards, blink 0.8s step-end infinite;
-  animation-delay: 3.5s;
-}
-.delay3 {
-  animation: typing 3s steps(60, end) forwards, blink 0.8s step-end infinite;
-  animation-delay: 7s;
+@keyframes slideInRight {
+  0% { opacity: 0; transform: translateX(50px); }
+  100% { opacity: 1; transform: translateX(0); }
 }
 
 /* Responsive */
@@ -318,10 +277,412 @@ body{ font-family: 'Segoe UI', sans-serif; }
     text-align: center;
   }
   .story-image img {
-    max-width: 300px;
-    margin: 0 auto;
+    max-width: 320px;
+    margin: 0 auto 1.5rem;
   }
 }
+
+/* ================= Mission & Vision Section ================= */
+.mission-vision {
+  background: var(--lilac);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.mission-vision .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--coral);
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.mission-vision .section-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.mission-card {
+  background: var(--white);
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+  border: 1px solid var(--coral);
+}
+
+.mission-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  border: 2px solid var(--coral);
+}
+
+.mission-card .icon {
+  font-size: 2.5rem;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.mission-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--glow);
+}
+
+.mission-card p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Animation delays */
+.animate-card.delay1 { animation-delay: 0.3s; }
+.animate-card.delay2 { animation-delay: 0.6s; }
+.animate-card.delay3 { animation-delay: 0.9s; }
+
+/* ================= Animations ================= */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .mission-vision {
+    padding: 3rem 1rem;
+  }
+  .mission-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ================= Meet the Team Section ================= */
+.meet-the-team {
+  background: peachpuff;
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.meet-the-team .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--coral);
+  margin-bottom: 0.8rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.meet-the-team .section-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 3rem;
+  opacity: 0;
+  animation: fadeInUp 1s forwards 0.5s;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  border: 2px solid var(--glow);
+}
+
+.team-card {
+  background: var(--white);
+  
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.team-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.team-image {
+  height: 180px; /* half card height approx */
+  overflow: hidden;
+}
+
+.team-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s;
+}
+
+.team-card:hover .team-image img {
+  transform: scale(1.05);
+}
+
+.team-info {
+  padding: 1.5rem 1rem;
+}
+
+.team-info h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: var(--coral);
+}
+
+.team-info p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Animation delays */
+.animate-card.delay1 { animation-delay: 0.3s; }
+.animate-card.delay2 { animation-delay: 0.6s; }
+.animate-card.delay3 { animation-delay: 0.9s; }
+.animate-card.delay4 { animation-delay: 1.2s; }
+
+/* Reuse fadeInUp animation from Mission & Vision */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(30px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .meet-the-team {
+    padding: 3rem 1rem;
+  }
+  .team-image {
+    height: 150px;
+  }
+}
+
+/* ================= Our Values Section ================= */
+.our-values {
+  background: var(--peach);
+  padding: 5rem 1.5rem;
+  text-align: center;
+}
+
+.our-values .section-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  color: var(--coral);
+  margin-bottom: 0.8rem;
+  animation: fadeInUp 1s forwards;
+  opacity: 0;
+}
+
+.our-values .section-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.2rem;
+  color: var(--gray);
+  margin-bottom: 3rem;
+  animation: fadeInUp 1s forwards 0.4s;
+  opacity: 0;
+}
+
+.values-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.value-card {
+  background: var(--white);
+  border: 2px solid var(--coral);
+  padding: 2rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  animation: fadeInUp 1s forwards;
+}
+
+.value-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 25px rgba(255, 153, 153, 0.6); /* Coral glow */
+}
+
+.value-card .icon {
+  font-size: 2.5rem;
+  color: var(--coral);
+  margin-bottom: 1rem;
+}
+
+.value-card h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: var(--glow);
+}
+
+.value-card p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Animation delays */
+.animate-card.delay1 { animation-delay: 0.3s; }
+.animate-card.delay2 { animation-delay: 0.6s; }
+.animate-card.delay3 { animation-delay: 0.9s; }
+.animate-card.delay4 { animation-delay: 1.2s; }
+
+/* Fade-in Animation */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 880px) {
+  .our-values {
+    padding: 3rem 1rem;
+  }
+  .value-card {
+    padding: 1.5rem 1rem;
+  }
+}
+
+/* ================= Feedback & Ratings ================= */
+.feedback {
+  padding: 4rem 2rem;
+  background: var(--coral);
+  text-align: center;
+  overflow: hidden;
+}
+
+.feedback .section-title {
+  font-size: 2.5rem;
+  color: var(--peach);
+  margin-bottom: 0.5rem;
+ font-family: 'Playfair Display', cursive;
+  animation: fadeDown 1s ease forwards;
+}
+
+.feedback .section-subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-bottom: 3rem;
+  animation: fadeUp 1s ease forwards 0.3s;
+}
+
+.feedback-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+/* Card Style */
+.feedback-card {
+  background: var(--white);
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  max-width: 300px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  opacity: 0;
+  transform: translateY(50px) scale(0.9);
+}
+
+.feedback-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+/* User Image */
+.user-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid var(--coral);
+  animation: popIn 0.8s ease forwards;
+}
+
+.feedback-card h3 {
+  font-size: 1.3rem;
+  margin-bottom: 0.2rem;
+  color: var(--gray);
+}
+
+.user-role {
+  font-size: 0.9rem;
+  color: #888;
+  margin-bottom: 1rem;
+}
+
+.review {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #555;
+  margin-bottom: 1rem;
+}
+
+/* Stars Glow */
+.stars {
+  font-size: 1.2rem;
+  color: gold;
+  letter-spacing: 2px;
+  animation: glowStars 2s infinite alternate;
+}
+
+/* ================= Animations ================= */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popIn {
+  0% { opacity: 0; transform: scale(0.5); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes glowStars {
+  0% { text-shadow: 0 0 5px gold; }
+  100% { text-shadow: 0 0 15px orange; }
+}
+
+/* On load animate cards */
+.animate-card {
+  animation: fadeUp 1s ease forwards;
+}
+.animate-card:nth-child(1) { animation-delay: 0.2s; }
+.animate-card:nth-child(2) { animation-delay: 0.4s; }
+.animate-card:nth-child(3) { animation-delay: 0.6s; }
 
 
 /* ========== FOOTER ========== */

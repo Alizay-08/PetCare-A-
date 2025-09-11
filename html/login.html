@@ -14,22 +14,19 @@
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-<!-- NAVBAR -->
- <!-- ================= NAVBAR ================= -->
+<!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-container">
     <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
     
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
-
       <a href="product.html">Product</a>
       
-      
       <!-- User Dropdown -->
-      <div class="dropdown user-dropdown">
-        <button class="dropbtn">User ▾</button>
-        <div class="dropdown-content">
+      <div class="dropdown">
+        <a href="#" class="dropbtn" id="userDrop">User ▾</a>
+        <div class="dropdown-content" id="userMenu">
           <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
       </div>
@@ -39,8 +36,8 @@
 
       <!-- Quick Links Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn">Quick Links ▾</button>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="quickDrop">Quick Links ▾</a>
+        <div class="dropdown-content" id="quickMenu">
           <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
           <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
           <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
@@ -51,36 +48,34 @@
     <!-- Hamburger for mobile -->
     <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
   </div>
-</header>
-  
+</header>  
    
 
-  <!-- FORM -->
-   <!-- BACKGROUND IMAGE -->
-  <div class="bg-container"></div>
+  <!-- BACKGROUND IMAGE -->
+<div class="bg-container"></div>
 
-  <!-- LOGIN FORM -->
-  <div class="form-container">
-    <div class="form-box">
-      <h2><i class="fa-solid fa-right-to-bracket"></i> Login</h2>
-      <form id="loginForm" novalidate>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" id="email" required>
-          <div class="error-msg" id="emailError">Enter a valid email</div>
+<!-- LOGIN FORM -->
+<div class="form-container">
+  <div class="form-box">
+    <h2><i class="fa-solid fa-right-to-bracket"></i> Login</h2>
+    <form id="loginForm" novalidate>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" id="email" required>
+        <div class="error-msg" id="emailError">Enter a valid email</div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" required>
+        <div class="error-msg" id="passwordError">
+          Password must be 8+ chars, include uppercase, lowercase, number & special char
         </div>
-        <div class="mb-3">
-          <label class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" required>
-          <div class="error-msg" id="passwordError">
-            Password must be 8+ chars, include uppercase, lowercase, number & special char
-          </div>
-        </div>
-        <button type="submit" class="btn-submit">Login</button>
-      </form>
-      <p class="text-center mt-2">Don't have an account? <a href="register.html">Register</a></p>
-    </div>
+      </div>
+      <button type="submit" class="btn-submit">Login</button>
+    </form>
+    <p class="text-center mt-2">Don't have an account? <a href="register.html">Register</a></p>
   </div>
+</div>
 <!-- ================= FOOTER ================= -->
 <footer class="footer">
   <div class="container footer-container">

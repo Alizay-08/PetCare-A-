@@ -15,22 +15,19 @@
 </head>
 <body>
 
-   <!-- NAVBAR -->
- <!-- ================= NAVBAR ================= -->
+   <!-- ================= NAVBAR ================= -->
 <header class="navbar">
   <div class="container nav-container">
     <div class="logo"><i class="fa-solid fa-paw"></i> FurShield</div>
     
     <nav class="nav-links" id="nav-links">
       <a href="index.html">Home</a>
-
       <a href="product.html">Product</a>
       
-      
       <!-- User Dropdown -->
-      <div class="dropdown user-dropdown">
-        <button class="dropbtn">User ▾</button>
-        <div class="dropdown-content">
+      <div class="dropdown">
+        <a href="#" class="dropbtn" id="userDrop">User ▾</a>
+        <div class="dropdown-content" id="userMenu">
           <a href="login.html"><i class="fa-solid fa-right-to-bracket"></i> Login</a>
         </div>
       </div>
@@ -40,8 +37,8 @@
 
       <!-- Quick Links Dropdown -->
       <div class="dropdown">
-        <button class="dropbtn">Quick Links ▾</button>
-        <div class="dropdown-content">
+        <a href="#" class="dropbtn" id="quickDrop">Quick Links ▾</a>
+        <div class="dropdown-content" id="quickMenu">
           <a href="#"><i class="fa-solid fa-dog"></i> Adopt Pets</a>
           <a href="#"><i class="fa-solid fa-stethoscope"></i> Find Vets</a>
           <a href="#"><i class="fa-solid fa-bone"></i> Browse Products</a>
@@ -53,6 +50,7 @@
     <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
   </div>
 </header>
+
  <!-- BACKGROUND IMAGE -->
   <div class="bg-container"></div>
 

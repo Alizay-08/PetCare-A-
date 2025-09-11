@@ -1,31 +1,34 @@
-const loginForm = document.getElementById('loginForm');
-const emailInput = document.getElementById('email');
-const passwordInput = document.getElementById('password');
+// LOGIN FORM VALIDATION
+document.getElementById('loginForm').addEventListener('submit', function(e){
+    e.preventDefault(); // prevent default submit
 
-const emailError = document.getElementById('emailError');
-const passwordError = document.getElementById('passwordError');
+    // form fields
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
 
-emailInput.addEventListener('input', () => {
-  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-  emailError.style.display = valid ? 'none' : 'block';
-});
+    let valid = true;
 
-passwordInput.addEventListener('input', () => {
-  const val = passwordInput.value;
-  const valid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(val);
-  passwordError.style.display = valid ? 'none' : 'block';
-});
+    // Email validation
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if(!email.value.match(emailPattern)){
+        document.getElementById('emailError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('emailError').style.display = 'none';
+    }
 
-loginForm.addEventListener('submit', e => {
-  e.preventDefault();
-  const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailInput.value);
-  const passwordValid = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&]).{8,}$/.test(passwordInput.value);
+    // Password validation: 8+ chars, upper, lower, number, special char
+    const passwordPattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+    if(!password.value.match(passwordPattern)){
+        document.getElementById('passwordError').style.display = 'block';
+        valid = false;
+    } else {
+        document.getElementById('passwordError').style.display = 'none';
+    }
 
-  emailError.style.display = emailValid ? 'none' : 'block';
-  passwordError.style.display = passwordValid ? 'none' : 'block';
-
-  if(emailValid && passwordValid){
-    alert("Login successful!"); // replace with backend
-    loginForm.reset();
-  }
+    if(valid){
+        // Form is valid, proceed with submit or AJAX
+        alert('Login successful!'); // placeholder
+        // this.submit(); // uncomment if actual form submission needed
+    }
 });
