@@ -27,7 +27,7 @@ html {
 
 /* Overlay Full */
 .hero-overlay {
-  background: rgba(0,0,0,0.45); /* dark transparent overlay */
+  background: rgba(0,0,0,0.45); 
   width: 100%;
   height: 100%;
   display: flex;

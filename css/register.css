@@ -31,7 +31,6 @@ header.navbar {
 .nav-links a { margin: 0 10px; text-decoration: none; color: #222; font-weight: 500;}
 .nav-links a:hover { color: var(--coral); }
 
-/* BACKGROUND IMAGE */
 .bg-container {
   position: fixed;
   top: 0; left: 0;
@@ -42,7 +41,7 @@ header.navbar {
   z-index: -1;
 }
 
-/* FORM CONTAINER */
+
 .form-container {
   position: relative;
   display: flex;
@@ -56,8 +55,12 @@ header.navbar {
   margin-bottom: 10%;
   margin-top: 10%;
 }
-
-/* FORM BOX */
+.form-container p{
+  color: #222;
+}
+.form-container a{
+  color: blue;
+}
 .form-box {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(15px);
@@ -78,7 +81,6 @@ header.navbar {
   font-family: 'Playfair Display', serif;
 }
 
-/* FORM CONTROLS */
 .form-box .form-label { font-weight: 600; color: #222; }
 .form-box .form-control,
 .form-box .form-select {
@@ -100,7 +102,7 @@ header.navbar {
   background: #fff;
 }
 
-/* BUTTON */
+
 .btn-submit {
   background: linear-gradient(90deg,var(--coral),var(--glow));
   border: none;
@@ -120,7 +122,7 @@ header.navbar {
   box-shadow: 0 6px 16px rgba(0,0,0,0.2);
 }
 
-/* VALIDATION */
+
 input:invalid, select:invalid {
   border-color: #e74c3c;
   box-shadow: 0 0 0 3px rgba(231,76,60,0.25);
@@ -130,7 +132,7 @@ input:invalid, select:invalid {
   color: #e74c3c;
   font-size: 0.85rem;
   margin-top: 2px;
-  display: none;
+ display: flex;
 }
 
 /* ANIMATION */

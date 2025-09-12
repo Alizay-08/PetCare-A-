@@ -17,8 +17,8 @@
 }
 
 body {
-  background: #FFFFFF; /* page background white */
-  color: #2A1A4D; /* dark text */
+  background: #FFFFFF; 
+  color: #2A1A4D; 
   font-family: 'Playfair Display', serif;
 }
 
@@ -40,7 +40,7 @@ a {
 
 body{ font-family: 'Segoe UI', sans-serif; }
 
-/* Navbar base */
+/* Navbar*/
 .navbar {
   background: var(--white);
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -75,7 +75,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
   position: relative;
 }
 
-/* Hover underline animation */
 .nav-links a:hover, .dropbtn:hover {
   color: var(--coral);
 }
@@ -95,14 +94,14 @@ body{ font-family: 'Segoe UI', sans-serif; }
   width: 100%;
 }
 
-/* Dropdown Container */
+
 .dropdown {
   position: relative;
 }
 .dropdown-content.show {
   display: block;
 }
-/* Dropdown content */
+
 .dropdown-content {
   display: none;
   position: absolute;
@@ -125,7 +124,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
   background-color: var(--peach);
 }
 
-/* Hamburger */
 .menu-toggle {
   display: none;
   font-size: 1.8rem;
@@ -272,71 +270,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
 }
 
 /* ================= Quick Links ================= */
-/* ================= Quick Links Navigation ================= */
-.quick-nav {
-  padding: 2rem 1.5rem;
-  background: lightcoral;
-  text-align: center;
-}
-
-.quick-nav-container {
-  max-width: 1200px;
-  margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1rem;
-  align-items: center;
-}
-
-.search-box {
-  display: flex;
-  width: 100%;
-  max-width: 400px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 3px 8px rgba(42,26,77,0.2);
-}
-
-.search-box input {
-  flex: 1;
-  padding: 0.6rem 1rem;
-  border: none;
-  outline: none;
-  font-size: 1rem;
-}
-
-.search-box button {
-  padding: 0 1rem;
-  background: #2A1A4D;
-  color: #FFD8B1;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.search-box button:hover {
-  background: #FF7F50;
-}
-
-.filters {
-  display: flex;
-  gap: 1rem;
-  flex-wrap: wrap;
-}
-
-.filters select {
-  padding: 0.6rem 1rem;
-  border-radius: 10px;
-  border: 1px solid #2A1A4D;
-  background: #FFF;
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.filters select:hover {
-  border-color: #FF7F50;
-}
 
 
 .quick-links {
@@ -349,7 +282,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   margin: 0 auto;
 }
 
-/* Individual Card */
+
 .quick-links .card {
   position: relative;
   flex: 1 1 280px;          
@@ -359,20 +292,20 @@ body{ font-family: 'Segoe UI', sans-serif; }
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(42,26,77,0.2);
-  border: 2px solid #2A1A4D;
+  border: 1px solid  #FF7F50; 
   transition: all 0.4s ease;
   opacity: 0;
   transform: translateY(30px);
 }
 
-/* Fade-in + slide-up animation */
+
 .animate-card.show {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.6s ease;
 }
 
-/* Card Image */
+
 .quick-links .card .card-img {
   width: 100%;
   height: 100%;
@@ -380,7 +313,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   transition: all 0.4s ease;
 }
 
-/* Overlay (hidden initially) */
+
 .quick-links .card-overlay {
   position: absolute;
   bottom: 0;
@@ -397,7 +330,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   border-radius: 20px;
 }
 
-/* Overlay text */
+
 .quick-links .card-overlay h3 {
   color: #FFD8B1;
   font-size: 1.5rem;
@@ -406,20 +339,20 @@ body{ font-family: 'Segoe UI', sans-serif; }
   margin: 0;
 }
 
-/* Hover Effects */
+
 .quick-links .card:hover {
   transform: translateY(-10px) scale(1.05);
   box-shadow: 0 15px 25px rgba(255,127,80,0.5);
   border: 2px solid #FF7F50;
 }
 
-/* Image zoom + slight blur on hover */
+
 .quick-links .card:hover .card-img {
   transform: scale(1.1);
   filter: brightness(0.7) blur(1px);
 }
 
-/* Overlay appear */
+
 .quick-links .card:hover .card-overlay {
   opacity: 1;
   transform: translateY(0);
@@ -443,13 +376,10 @@ body{ font-family: 'Segoe UI', sans-serif; }
     margin-bottom: 1.5rem;
   }
 }
-
-/* ========purpose section========= */
-/* ================= Purpose Section ================= */
 /* ================= Purpose Section ================= */
 .purpose-section {
   padding: 5rem 1.5rem;
-  background: var(--accent-lilac); 
+   background: #ffffff;
 }
 
 .purpose-container {
@@ -472,10 +402,10 @@ body{ font-family: 'Segoe UI', sans-serif; }
 .purpose-header p {
   font-family: 'popins', ;
   font-size: 1.3rem;
-  color: #f0f0f0;
+ color: #FF7F50; 
 }
 
-/* Cards Container */
+
 .purpose-cards {
   display: flex;
   flex-wrap: wrap;
@@ -483,29 +413,28 @@ body{ font-family: 'Segoe UI', sans-serif; }
   gap: 1.8rem;
 }
 
-/* Individual Card */
 .purpose-card {
   position: relative;
-  width: 250px;  /* same as Quick Links */
-  height: 250px; /* square */
+  width: 250px;  
+  height: 250px; 
   border-radius: 20px;
   overflow: hidden;
   cursor: pointer;
   box-shadow: 0 5px 15px rgba(42,26,77,0.2);
-  border: 2px solid #2A1A4D;
+  border: 1px solid  #FF7F50; 
   transition: all 0.3s ease;
-  opacity: 0;             /* for JS animation on scroll */
-  transform: translateY(30px); /* slide-up start */
+  opacity: 0;
+  transform: translateY(30px); 
 }
 
-/* Animate cards on load (add 'show' class via JS) */
+
 .purpose-card.show {
   opacity: 1;
   transform: translateY(0);
   transition: all 0.5s ease;
 }
 
-/* Card Image */
+
 .purpose-card .card-img {
   width: 100%;
   height: 100%;
@@ -513,7 +442,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   transition: all 0.3s ease;
 }
 
-/* Overlay */
+
 .purpose-card .card-overlay {
   position: absolute;
   top: 0;
@@ -533,7 +462,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
 }
 
 .purpose-card .card-overlay h3 {
-  color: #FFD8B1; /* soft peach */
+  color: #FFD8B1; 
   font-family: 'Playfair Display', serif;
   font-size: 1.3rem;
   margin-bottom: 0.5rem;
@@ -545,11 +474,11 @@ body{ font-family: 'Segoe UI', sans-serif; }
   line-height: 1.4;
 }
 
-/* Hover effect */
+
 .purpose-card:hover {
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 15px 25px rgba(255,127,80,0.5);
-  border: 2px solid #FF7F50; /* vibrant glow */
+  border: 2px solid #FF7F50; 
 }
 
 .purpose-card:hover .card-img {
@@ -576,7 +505,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
 /* ================= Common Features ================= */
 .common-features {
   padding: 6rem 1.5rem;
-  background: #ffffff; /* full white strip */
+  background: #ffffff; 
 }
 
 .features-container {
@@ -593,7 +522,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   font-family: 'Playfair Display', serif;
   font-size: 2.8rem;
   font-style: italic;
-  color: #2A1A4D; /* deep indigo */
+  color: #2A1A4D; 
   margin-bottom: 0.5rem;
 }
 
@@ -603,7 +532,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
   color: #FF7F50; 
 }
 
-/* Cards Container */
 .features-cards {
   display: flex;
   flex-wrap: wrap;
@@ -612,9 +540,9 @@ body{ font-family: 'Segoe UI', sans-serif; }
   
 }
 
-/* Individual Card */
+
 .feature-card {
-  flex: 1 1 30%; /* 3 cards per row */
+  flex: 1 1 30%; 
   padding: 2rem 1rem;
   text-align: center;
   border-radius: 15px;
@@ -626,15 +554,15 @@ body{ font-family: 'Segoe UI', sans-serif; }
   border: 1px solid  #FF7F50; 
 }
 
-/* Card Icon */
+
 .feature-card i {
   font-size: 2.5rem;
-  color: #FF7F50; /* glow color */
+  color: #FF7F50; 
   margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
-/* Card Title */
+
 .feature-card h3 {
   font-size: 1.4rem;
   color: #2A1A4D;
@@ -642,17 +570,16 @@ body{ font-family: 'Segoe UI', sans-serif; }
   font-family: 'Playfair Display', serif;
 }
 
-/* Card Description */
 .feature-card p {
   font-size: 1rem;
   color: #2A1A4D;
   line-height: 1.5;
 }
 
-/* Hover Effects */
+
 .feature-card:hover {
   transform: translateY(-8px) scale(1.02);
-  box-shadow: 0 15px 30px rgba(255,127,80,0.3); /* glow on hover */
+  box-shadow: 0 15px 30px rgba(255,127,80,0.3); 
 }
 
 .feature-card:hover i {
@@ -699,7 +626,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
   color: #6e6e6e;
 }
 
-/* Grid Container */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -708,7 +634,7 @@ body{ font-family: 'Segoe UI', sans-serif; }
   margin: auto;
 }
 
-/* Individual Product Card */
+
 .product-card {
   text-align: center;
   cursor: pointer;
@@ -717,13 +643,13 @@ body{ font-family: 'Segoe UI', sans-serif; }
 
 .product-card img {
   width: 100%;
-  aspect-ratio: 1 / 1; /* square cards */
+  aspect-ratio: 1 / 1; 
   object-fit: cover;
   border-radius: 8px;
   transition: transform 0.4s ease;
 }
 
-/* Product Name below image */
+
 .product-card h3 {
   margin-top: 0.5rem;
   font-size: 1.1rem;
@@ -731,7 +657,6 @@ body{ font-family: 'Segoe UI', sans-serif; }
   font-weight: 500;
 }
 
-/* Hover Effect */
 .product-card:hover img {
   transform: scale(1.05);
 }
@@ -756,109 +681,4 @@ body{ font-family: 'Segoe UI', sans-serif; }
 }
 
 
-
-/* ================= Appointment Section ================= */
-.appointment-section {
-  position: relative;
-  background: url('../images/appointment-bg.png') center/cover no-repeat;
-  padding: 6rem 1.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.appointment-section .overlay {
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.55);
-  backdrop-filter: blur(5px);
-  z-index: 1;
-}
-
-.form-container {
-  position: relative;
-  z-index: 2;
-  background: transparent;
-  padding: 2.5rem;
-  border-radius: 15px;
-  max-width: 550px;
-  width: 100%;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
-  text-align: center;
-  border: 2px solid var(--coral);
-}
-
-.form-title {
-  font-family: 'Playfair Display', serif;
-  font-size: 2rem;
-  color: var(--coral);
-  margin-bottom: 0.5rem;
-}
-
-.form-subtitle {
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  margin-bottom: 1.8rem;
-  color: #444;
-}
-
-.form-group {
-  margin-bottom: 1.2rem;
-  text-align: left;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  width: 100%;
-  padding: 0.9rem 1rem;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  font-family: 'Quicksand', sans-serif;
-  font-size: 1rem;
-  transition: border-color 0.3s, box-shadow 0.3s;
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--coral);
-  box-shadow: 0 0 10px rgba(255, 127, 80, 0.4);
-}
-.error-msg {
-    display: none;
-    font-size: 0.85rem;
-    color: #e63946; /* red */
-    margin-top: 3px;
-  }
-  .form-control.error {
-    border: 1px solid #e63946;
-  }
-.btn-submit {
-  display: inline-block;
-  background: var(--coral);
-  color: #fff;
-  padding: 0.9rem 2rem;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-size: 1.1rem;
-  transition: background 0.3s, transform 0.3s;
-}
-
-.btn-submit:hover {
-  background: #ff7f50e6;
-  transform: translateY(-3px);
-}
-
-/* Responsive */
-@media (max-width: 600px) {
-  .form-container {
-    padding: 1.8rem;
-  }
-  .form-title {
-    font-size: 1.6rem;
-  }
-}
 

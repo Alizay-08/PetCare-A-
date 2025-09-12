@@ -21,7 +21,7 @@ quickDrop.addEventListener('click', (e) => {
   quickMenu.classList.toggle('show');
 });
 
-// Close dropdowns when clicking outside
+
 window.addEventListener('click', (e) => {
   if (!userDrop.contains(e.target) && !userMenu.contains(e.target)) {
     userMenu.classList.remove('show');
@@ -41,65 +41,8 @@ const observer = new IntersectionObserver(entries => {
       entry.target.classList.add('show');
     }
   });
-}, { threshold: 0.3 }); // 30% visible
+}, { threshold: 0.3 }); 
 
 cards.forEach(card => observer.observe(card));
 
 
-document.getElementById("appointmentForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  let isValid = true;
-  let today = new Date().toISOString().split("T")[0];
-
-  // Clear previous errors
-  document.querySelectorAll(".error-msg").forEach(el => el.style.display = "none");
-  document.querySelectorAll(".form-control").forEach(el => el.classList.remove("error"));
-
-  let name = document.getElementById("name");
-  if (!/^[A-Za-z\s]{3,}$/.test(name.value.trim())) {
-    document.getElementById("nameError").style.display = "block";
-    name.classList.add("error");
-    isValid = false;
-  }
-
-  let email = document.getElementById("email");
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value.trim())) {
-    document.getElementById("emailError").style.display = "block";
-    email.classList.add("error");
-    isValid = false;
-  }
-
-  let phone = document.getElementById("phone");
-  if (!/^\d{10,15}$/.test(phone.value.trim())) {
-    document.getElementById("phoneError").style.display = "block";
-    phone.classList.add("error");
-    isValid = false;
-  }
-
-  let petType = document.getElementById("petType");
-  if (petType.value === "") {
-    document.getElementById("petTypeError").style.display = "block";
-    petType.classList.add("error");
-    isValid = false;
-  }
-
-  let date = document.getElementById("date");
-  if (date.value < today) {
-    document.getElementById("dateError").style.display = "block";
-    date.classList.add("error");
-    isValid = false;
-  }
-
-  let message = document.getElementById("message");
-  if (message.value.trim().length > 500) {
-    document.getElementById("messageError").style.display = "block";
-    message.classList.add("error");
-    isValid = false;
-  }
-
-  if (isValid) {
-    alert("✅ Appointment booked successfully!");
-    this.reset();
-  }
-});

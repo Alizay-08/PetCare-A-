@@ -31,7 +31,6 @@ header.navbar {
 .nav-links a { margin: 0 10px; text-decoration: none; color: #222; font-weight: 500;}
 .nav-links a:hover { color: var(--coral); }
 
-/* BACKGROUND IMAGE */
 .bg-container {
   position: fixed;
   top: 0; left: 0;
@@ -42,7 +41,6 @@ header.navbar {
   z-index: -1;
 }
 
-/* FORM CONTAINER */
 .form-container {
   position: relative;
   display: flex;
@@ -56,8 +54,16 @@ header.navbar {
   margin-bottom: 10%;
   margin-top: 10%;
 }
+.form-container p{
+  color: #222;
+}
+.form-container .error-msg{
+  color: #222;
+}
+.form-container a{
+  color:blue;
+}
 
-/* FORM BOX */
 .form-box {
   background: rgba(255,255,255,0.25);
   backdrop-filter: blur(15px);
@@ -70,7 +76,6 @@ header.navbar {
   animation: fadeIn 0.6s ease forwards;
 }
 
-/* FORM HEADINGS */
 .form-box h2 {
   color: var(--coral);
   font-weight: bold;
@@ -78,8 +83,7 @@ header.navbar {
   font-family: 'Playfair Display', serif;
 }
 
-/* FORM CONTROLS */
-.form-box .form-label {
+.form-box .form-placeholder {
   font-weight: 600; 
   color: #222; 
 }
@@ -99,7 +103,6 @@ header.navbar {
   background: #fff;
 }
 
-/* SUBMIT BUTTON */
 .btn-submit {
   background: linear-gradient(90deg,var(--coral),var(--glow));
   border: none;
